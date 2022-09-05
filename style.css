@@ -1,31 +1,38 @@
 li {
-  align-items: center;
-  flex-flow: row wrap;
-  height: 100px;
+  height: 40px;
   margin: 2px;
   padding: 15px;
   transition: all 0.25s ease;
-  width: 100px;
-  display: inline-block;
+  width: 40px;
+  display: inline-flex;
   border: 1px solid black;
 }
 
-li:nth-of-type( 1 ) {
+#color-palette li:nth-of-type( 1 ) {
   background-color: black;
   color: black;
 }
 
-li:nth-of-type( 2 ) {
+#color-palette li:nth-of-type( 2 ) {
   background-color: rgb(0, 150, 152);
   color: rgb(0, 150, 152);
 }
 
-li:nth-of-type( 3 ) {
+#color-palette li:nth-of-type( 3 ) {
   background-color: rgb(237, 222, 164);
   color: rgb(237, 222, 164);
 }
 
-li:nth-of-type( 4 ) {
+#color-palette li:nth-of-type( 4 ) {
   background-color: rgb(247, 160, 114);
   color: rgb(247, 160, 114);
+}
+
+#pixel-board {
+  max-width: 400px;
+}
+
+.pixel {
+  background-color: white;
+  color: white;
 }
