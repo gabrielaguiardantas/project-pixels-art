@@ -23,9 +23,9 @@ function randomColors() {
   button.addEventListener('click', paintBoxes);
 } randomColors();
 
-//function retrieveBackgroundInfos() {
+// function retrieveBackgroundInfos() {
 //  localStorage.getItem('colorPalette') = target.style.backgroundColor;
-//}retrieveBackgroundInfos();
+// }retrieveBackgroundInfos();
 
 function selectedBoxes(event) {
   const boxElement = document.querySelector('.selected');
@@ -36,3 +36,8 @@ target[0].addEventListener('click', selectedBoxes);
 target[1].addEventListener('click', selectedBoxes);
 target[2].addEventListener('click', selectedBoxes);
 target[3].addEventListener('click', selectedBoxes);
+
+function paintBox() {
+  document.getElementsByClassName('color selected')[0].style.backgroundColor = document.querySelector('.pixel');
+}
+document.getElementsByClassName('pixel')[0].addEventListener('click', paintBox);
