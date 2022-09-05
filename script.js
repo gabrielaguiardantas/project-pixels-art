@@ -9,13 +9,30 @@ function randomBgColor() {
 const target = document.getElementsByClassName('color');
 const button = document.getElementById('button-random-color');
 
-function qualquer() {
+function paintBoxes() {
+  let saveBackgroundColors = [];
   for (let i = 1; i < target.length; i += 1) {
     const backgroundColor = randomBgColor();
     target[i].style.backgroundColor = backgroundColor;
     target[i].style.color = backgroundColor;
+    saveBackgroundColors += target[i].style.backgroundColor;
+    localStorage.setItem('colorPalette', saveBackgroundColors);
   }
-}
+} paintBoxes();
 function randomColors() {
-  button.addEventListener('click', qualquer);
+  button.addEventListener('click', paintBoxes);
 } randomColors();
+
+//function retrieveBackgroundInfos() {
+//  localStorage.getItem('colorPalette') = target.style.backgroundColor;
+//}retrieveBackgroundInfos();
+
+function selectedBoxes(event) {
+  const boxElement = document.querySelector('.selected');
+  boxElement.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+target[0].addEventListener('click', selectedBoxes);
+target[1].addEventListener('click', selectedBoxes);
+target[2].addEventListener('click', selectedBoxes);
+target[3].addEventListener('click', selectedBoxes);
