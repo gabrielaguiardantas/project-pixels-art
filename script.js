@@ -48,15 +48,22 @@ target[1].addEventListener('click', selectedBoxes);
 target[2].addEventListener('click', selectedBoxes);
 target[3].addEventListener('click', selectedBoxes);
 
-let obj = document.getElementsByClassName('color selected')[0].style.backgroundColor;
 const trgt = document.getElementsByClassName('pixel');
 function arrayPixelPaint(event) {
+  const obj = document.getElementsByClassName('color selected')[0].style.backgroundColor;
   event.target.style.backgroundColor = obj;
-  console.log(obj);
-} console.log(obj);
+}
 
 for (let i = 0; i < trgt.length; i += 1) {
   trgt[i].addEventListener('click', arrayPixelPaint);
 }
+const clearButton = document.querySelector('#clear-board');
+
+function clearBoard() {
+  for (let i = 0; i < trgt.length; i += 1) {
+    trgt[i].style.backgroundColor = 'white';
+  }
+}
+clearButton.addEventListener('click', clearBoard);
 
 window.onload = retrieveBackgroundInfos;
