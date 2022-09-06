@@ -2,7 +2,6 @@ li {
   height: 40px;
   margin: 2px;
   padding: 15px;
-  transition: all 0.25s ease;
   width: 40px;
   display: inline-flex;
   border: 1px solid black;
