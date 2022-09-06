@@ -48,10 +48,10 @@ target[1].addEventListener('click', selectedBoxes);
 target[2].addEventListener('click', selectedBoxes);
 target[3].addEventListener('click', selectedBoxes);
 
-const obj = document.getElementsByClassName('color selected')[0].style.backgroundColor;
+let obj = document.getElementsByClassName('color selected')[0].style.backgroundColor;
 const trgt = document.getElementsByClassName('pixel');
 function arrayPixelPaint(event) {
-  event.target.style.backgroundColor = 'blue';
+  event.target.style.backgroundColor = obj;
   console.log(obj);
 } console.log(obj);
 
