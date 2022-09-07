@@ -50,10 +50,14 @@ target[3].addEventListener('click', selectedBoxes);
 
 const trgt = document.getElementsByClassName('pixel');
 function arrayPixelPaint(event) {
+  const savePixelBoardInfo = [];
   const obj = document.getElementsByClassName('color selected')[0].style.backgroundColor;
   event.target.style.backgroundColor = obj;
+  for (let i = 0; i < trgt.length; i += 1) {
+    savePixelBoardInfo.push(trgt[i].style.backgroundColor);
+  }
+  localStorage.setItem('pixelBoard', JSON.stringify(savePixelBoardInfo));
 }
-
 for (let i = 0; i < trgt.length; i += 1) {
   trgt[i].addEventListener('click', arrayPixelPaint);
 }
@@ -66,4 +70,17 @@ function clearBoard() {
 }
 clearButton.addEventListener('click', clearBoard);
 
-window.onload = retrieveBackgroundInfos;
+function retrievePixelBoardInfo() {
+  const saveBoard = JSON.parse(localStorage.getItem('pixelBoard'));
+  console.log(localStorage);
+  if (localStorage.length > 0) {
+    for (let i = 0; i < trgt.length; i += 1) {
+      trgt[i].style.backgroundColor = saveBoard[i];
+    }
+  }
+}
+
+window.onload = function qualquer() {
+  retrieveBackgroundInfos();
+  retrievePixelBoardInfo();
+};
