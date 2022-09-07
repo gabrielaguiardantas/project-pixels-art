@@ -6,6 +6,8 @@ const box4 = document.getElementsByClassName('color')[3];
 const color = document.getElementsByClassName('color');
 const button = document.getElementById('button-random-color');
 const pixel = document.getElementsByClassName('pixel');
+const input = document.querySelector('#board-size');
+const pixelBoard = document.getElementById('pixel-board');
 
 box1.style.backgroundColor = 'black';
 box2.style.backgroundColor = 'rgb(0, 150, 152)';
@@ -86,6 +88,13 @@ function retrievePixelBoardInfo() {
   }
 }
 
+function boardSize() {
+  if (input.value ** 2 > pixel.length) {
+    pixelBoard.appendChildEle(document.createElement('li').classList.add('pixel'));
+  }
+} boardSize();
+
+input.addEventListener('input', boardSize);
 color[0].addEventListener('click', selectedBoxes);
 color[1].addEventListener('click', selectedBoxes);
 color[2].addEventListener('click', selectedBoxes);
