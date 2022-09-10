@@ -7,7 +7,8 @@ const color = document.getElementsByClassName('color');
 const button = document.getElementById('button-random-color');
 const pixel = document.getElementsByClassName('pixel');
 const input = document.querySelector('#board-size');
-const pixelBoard = document.getElementById('pixel-board');
+const pixelBoard = document.querySelector('#pixel-board');
+const vqvButton = document.getElementById('generate-board');
 
 box1.style.backgroundColor = 'black';
 box2.style.backgroundColor = 'rgb(0, 150, 152)';
@@ -89,12 +90,18 @@ function retrievePixelBoardInfo() {
 }
 
 function boardSize() {
-  if (input.value ** 2 > pixel.length) {
-    pixelBoard.appendChildEle(document.createElement('li').classList.add('pixel'));
+  if (input.value === '') {
+    alert('Board Inválido!');
   }
-} boardSize();
+  if (input.value ** 2 > pixel.length) {
+    const newLi = document.createElement('li');
+    pixelBoard.appendChild(newLi);
+    newLi.className = 'pixel';
+    const newBoardSize = document.getElementsByClassName('pixel');
+  }
+}
 
-input.addEventListener('input', boardSize);
+vqvButton.addEventListener('click', boardSize);
 color[0].addEventListener('click', selectedBoxes);
 color[1].addEventListener('click', selectedBoxes);
 color[2].addEventListener('click', selectedBoxes);
