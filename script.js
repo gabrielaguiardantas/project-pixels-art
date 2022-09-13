@@ -84,7 +84,7 @@ function clearBoard() {
 }
 
 function retrievePixelBoardInfo() {
-  if (localStorage.length > 0) {
+  if (localStorage.length > 1) {
     const saveBoard = JSON.parse(localStorage.getItem('pixelBoard'));
     for (let i = 0; i < pixel.length; i += 1) {
       pixel[i].style.backgroundColor = saveBoard[i];
@@ -93,13 +93,17 @@ function retrievePixelBoardInfo() {
 }
 
 function populate(size) {
+  document.querySelectorAll('.pixel').forEach((e) => e.remove());
   pixelBoard.style.setProperty('--size', size);
   for (let i = 0; i < size ** 2; i += 1) {
     const li = document.createElement('li');
     li.classList.add('pixel');
     pixelBoard.appendChild(li);
   }
-}
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', arrayPixelPaint);
+  }
+} populate(5);
 
 function resetBoard() {
   clearBoard();
@@ -108,13 +112,30 @@ function resetBoard() {
 
 function vqvClick() {
   resetBoard();
-  const size = input.value;
+  let size = input.value;
   if (size === '') {
     alert('Board Inválido!');
   } else {
-    populate(size);
+    if (size < 5) {
+      size = 5;
+      populate(size);
+    }
+    if (size > 50) {
+      size = 50;
+      populate(size);
+    } else {
+      populate(size);
+    }
   }
 }
+
+function retrieveSizeBoard() {
+  if (localStorage.getItem('boardSize') === null) {
+    populate(5);
+  } else {
+    populate(localStorage.getItem('boardSize'));
+  }
+} retrieveSizeBoard();
 
 vqvButton.addEventListener('click', vqvClick);
 color[0].addEventListener('click', selectedBoxes);
