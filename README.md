@@ -1,4 +1,10 @@
-# :construction: README customizado em construção ! :construction:
+# Projeto Pixels Art #
+
+Terceiro projeto do curso de desenvolvimento web da Trybe. O objetivo desse projeto foi criar uma tela de tamanho e paleta de cores variada para desenhos pixelados. Utilizamos HTML, CSS e Javascript para execução do mesmo.
+
+## Demonstração: ##
+
+
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
 
