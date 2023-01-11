@@ -1,6 +1,6 @@
 # Projeto Pixels Art #
 
-Terceiro projeto do curso de desenvolvimento web da Trybe. O objetivo desse projeto foi criar uma tela de tamanho e paleta de cores variada para desenhos pixelados. Utilizamos HTML, CSS e Javascript para execução do mesmo.
+Terceiro projeto do curso de desenvolvimento web da Trybe. O objetivo desse projeto foi criar uma tela de tamanho e paleta de cores variada para desenhos pixelados. Utilizei HTML, CSS e Javascript para execução do mesmo.
 
 ## Demonstração: ##
 https://user-images.githubusercontent.com/110852595/211817066-fbb7da2d-f5be-402b-98bb-00f24c209486.mp4
